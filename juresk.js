@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const fs = require('fs');
 const ayarlar = require('./ayarlar.json');
 require('./util/eventLoader.js')(client)
-mongoose.connect(ayarlar.dbURL,{useNewUrlParser: true , useUnifiedTopology: true}).then((result) => console.log('Mongo Bağlantısı Kuruldu.')).catch((err) => console.log(err))
+mongoose.connect(ayarlar.mongoURL,{useNewUrlParser: true , useUnifiedTopology: true}).then((result) => console.log('Mongo Bağlantısı Kuruldu.')).catch((err) => console.log(err))
 client.commands = new Discord.Collection()
 
 fs.readdirSync('./commands').forEach(klasor => {
@@ -17,4 +17,4 @@ fs.readdirSync('./commands').forEach(klasor => {
 })
 
 
-client.login(ayarlar.token).then(x => console.log(`Bot ${client.user.username} Adıyla Giriş Yaptı!`)).catch(err => console.log(`Bot Giriş Yapamadı! Hata: ${err}`))
+client.login(ayarlar.token).then(x => console.log(`Bot ${client.user.username} Adıyla Giriş Yaptı!`)).catch(err => console.log(`Giriş Yapamadı! Hata: ${err}`))
