@@ -17,4 +17,4 @@ fs.readdirSync('./commands').forEach(klasor => {
 })
 
 
-client.login(settings.token).then(x => console.log(`Bot ${client.user.username} Adlı Bota Giriş Yaptı!`)).catch(err => console.log(`Bota Giriş Yapamadı! Hata: ${err}`))
+client.login(settings.token).then(x => console.log(`Bot ${client.user.username} Adıyla Giriş Yapıldı!`)).catch(err => console.log(`Bota Giriş Yapamadı! Hata: ${err}`))
