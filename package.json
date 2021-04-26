@@ -1,12 +1,12 @@
 {
-  "name": "mongoahmet",
-  "version": "1.0.0",
+  "name": "mongo-bos",
+  "version": "1.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "juresk.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node juresk.js"
   },
-  "author": "Champ",
+  "author": "JuresK",
   "license": "MIT",
   "dependencies": {
     "discord.js": "^12.5.1",
