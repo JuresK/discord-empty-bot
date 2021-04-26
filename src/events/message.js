@@ -24,18 +24,6 @@ module.exports = async (message) => {
       }
     }
 
-     /*
-    Kullanıcı Yetki Mesajları
-    1- Kanalları Yönet
-    2- Rolleri Yönet
-    3- Mesajları Yönet
-    4- Üyeleri At
-    5- Üyeleri Yasakla
-    6- Sunucuyu Yönet
-    7- Yönetici
-    8- Sunucu Sahibi
-    DEVELOPER- Bot Sahibi
-    */
     if (!message.member.hasPermission("ADMINISTRATOR")) {
       if (command.userPerm === "7") {
         return embed(`<@${message.author.id}> Bu Komutu Kullanabilmek İçin **Yönetici** Yetkisine Sahip Olmalısın.`, message.channel)
@@ -76,17 +64,6 @@ module.exports = async (message) => {
       }
     }
     
-    
-     /*
-    Bot Yetki Mesajları
-    1- Kanalları Yönet
-    2- Rolleri Yönet
-    3- Mesajları Yönet
-    4- Üyeleri At
-    5- Üyeleri Yasakla
-    6- Sunucuyu Yönet
-    7- Yönetici
-    */
        if (!message.guild.me.hasPermission("ADMINISTRATOR")) {
        if (command.botPerm === "7") {
         return embed(`<@${message.author.id}> Bu Komutu Kullanabilmek İçin **Yönetici** Yetkimin Olması Gerekli.`, message.channel)
