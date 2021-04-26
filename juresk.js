@@ -15,6 +15,6 @@ fs.readdirSync('./commands').forEach(klasor => {
     client.commands.set(komutlarr.name, komutlarr)
   }
 })
-
+//by Champ&Jr
 
 client.login(settings.token).then(x => console.log(`Bot ${client.user.username} Adıyla Giriş Yapıldı!`)).catch(err => console.log(`Bota Giriş Yapamadı! Hata: ${err}`))
