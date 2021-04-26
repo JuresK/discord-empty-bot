@@ -1,6 +1,6 @@
 module.exports = (client) =>  {
 
-  client.user.setActivity('DURUM')
+  client.user.setActivity('Juvesk abe')
   console.log("Bot Aktif!");
 };
 
