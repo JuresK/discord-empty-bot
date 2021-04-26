@@ -1,0 +1,18 @@
+{
+  "name": "mongoahmet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Champ",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "fs": "^0.0.1-security",
+    "mongoose": "^5.11.16",
+    "node-fetch": "^2.6.1",
+    "moment": "^2.29.1"
+  }
+}
