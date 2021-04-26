@@ -1,5 +1,5 @@
 {
 "token": "TOKEN",
 "prefix": "PREFİX",
-"dbURL": "MONGO URL"
+"mongoURL": "MONGO URL"
 }
