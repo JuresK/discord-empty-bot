@@ -2,4 +2,4 @@
 
 Bomboş mongoDB
 
-[[Champ]](https://www.discord.com/users/692655071967576074) | [[JuresK]](https://www.discord.com/users/793008866815901736)
+[[Champ GitHub]](https://www.github.com/champ018) | [[JuresK GitHub]](https://www.github.com/JuresK)
