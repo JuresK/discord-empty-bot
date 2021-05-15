@@ -1,36 +1,34 @@
-const Discord = require("discord.js")
-const moment = require('moment')
-const ms = require('ms')
-const mongoose = require("mongoose");
-const fs = require('fs');
+const Discord = require("discord.js");
+const conf = require("../configs/config.json");
+const settings = require("../configs/settings.json");
 
 module.exports = {
-  name: "eval",
-  aliases: [],
-  userPerm: "DEVELOPER",
-  botPerm: "7",
-  enabled: true,
-  run: async(message, args, client) => {
-  try {
-      let code1 = args.join(" ");
-      let code = eval(code1);
+  conf: {
+    aliases: [],
+    name: "eval",
+    owner: true
+  },
+  
+  run: async (client, message, args) => {
+    if (!args[0]) return;
+    let code = args.join(" ");
 
-      if (code1.length < 1) return message.channel.send({ embed: { color: ayarlar.embedrenk, description: `**<@${message.author.id}> Deneyeceğin Kodu Yazmalısın!**` } })
-
-      if (typeof code !== 'string')
-        code = require('util').inspect(code, { depth: 0 });
-      let embed = new Discord.MessageEmbed()
-        .setColor("RANDOM")
-        .addField('» Kod', `\`\`\`js\n${code1}\`\`\``)
-        .addField('» Sonuç', `\`\`\`js\n${code}\n\`\`\``)
-        .setTimestamp()
-      message.channel.send(embed)
-    } catch (x) {
-      let embed2 = new Discord.MessageEmbed()
-        .setColor("RANDOM")
-        .addField('» Hata', "\`\`\`js\n" + x + "\n\`\`\`")
-        .setTimestamp()
-      message.channel.send(embed2);
+    try {
+      var result = clean(await eval(code));
+      if (result.includes(client.token))
+        return message.channel.send("Kardeş sen hayırdır, Token falan?");
+      message.channel.send(result, { code: "js", split: true });
+    } catch (err) {
+      message.channel.send(err, { code: "js", split: true });
     }
-  }
+  },
+};
+
+function clean(text) {
+  if (typeof text !== "string")
+    text = require("util").inspect(text, { depth: 0 });
+  text = text
+    .replace(/`/g, "`" + String.fromCharCode(8203))
+    .replace(/@/g, "@" + String.fromCharCode(8203));
+  return text;
 }
