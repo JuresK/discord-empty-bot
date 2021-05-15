@@ -12,16 +12,16 @@ module.exports = {
   enabled: true,
   run: async(message, args, client) => {
   try {
-      let codeshare = args.join(" ");
+      let code1 = args.join(" ");
       let code = eval(codeshare);
 
-      if (codeshare.length < 1) return message.channel.send({ embed: { color: ayarlar.embedrenk, description: `**<@${message.author.id}> Deneyeceğin Kodu Yazmalısın!**` } })
+      if (code1.length < 1) return message.channel.send({ embed: { color: ayarlar.embedrenk, description: `**<@${message.author.id}> Deneyeceğin Kodu Yazmalısın!**` } })
 
       if (typeof code !== 'string')
         code = require('util').inspect(code, { depth: 0 });
       let embed = new Discord.MessageEmbed()
         .setColor("RANDOM")
-        .addField('» Kod', `\`\`\`js\n${codeshare}\`\`\``)
+        .addField('» Kod', `\`\`\`js\n${code1}\`\`\``)
         .addField('» Sonuç', `\`\`\`js\n${code}\n\`\`\``)
         .setTimestamp()
       message.channel.send(embed)
