@@ -4,7 +4,7 @@
   "description": "",
   "main": "juresk.js",
   "scripts": {
-    "start": "node juresk.js"
+    "start": "node ."
   },
   "author": "JuresK",
   "license": "MIT",
