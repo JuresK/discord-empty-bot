@@ -13,7 +13,7 @@ module.exports = {
   run: async(message, args, client) => {
   try {
       let code1 = args.join(" ");
-      let code = eval(codeshare);
+      let code = eval(code1);
 
       if (code1.length < 1) return message.channel.send({ embed: { color: ayarlar.embedrenk, description: `**<@${message.author.id}> Deneyeceğin Kodu Yazmalısın!**` } })
 
