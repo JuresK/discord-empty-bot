@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 const fs = require('fs');
 const settings = require('./settings.json');
 require('./util/eventLoader.js')(client)
-mongoose.connect(ayarlar.mongoURL,{useNewUrlParser: true , useUnifiedTopology: true}).then((result) => console.log('Mongo Bağlantısı Kuruldu.')).catch((err) => console.log(err))
 client.commands = new Discord.Collection()
 
 fs.readdirSync('./commands').forEach(klasor => {
@@ -15,6 +14,5 @@ fs.readdirSync('./commands').forEach(klasor => {
     client.commands.set(komutlarr.name, komutlarr)
   }
 })
-//by Champ&Jr
 
 client.login(settings.token).then(x => console.log(`Bot ${client.user.username} Adıyla Giriş Yapıldı!`)).catch(err => console.log(`Bota Giriş Yapamadı! Hata: ${err}`))
