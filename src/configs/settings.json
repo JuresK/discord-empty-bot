@@ -1,5 +1,6 @@
 {
 "token": "token",
-"prefix": ".",
+"prefix": ["."],
 "mongoUrl": "MONGO-URL"
+"owners": []
 }
