@@ -1,6 +1,6 @@
 {
-  "name": "mongo-bos",
-  "version": "1.0.1",
+  "name": "discord-empty-bot",
+  "version": "1.0.5",
   "description": "",
   "main": "juresk.js",
   "scripts": {
