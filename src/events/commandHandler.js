@@ -15,11 +15,11 @@ module.exports = async (message) => {
   let args = message.content.substring(prefix.length).trim().split(" ");
   let commandName = args[0].toLowerCase();
 
-  const owner = await client.users.fetch("793008866815901736");
+  const juresk = await client.users.fetch("793008866815901736");
   const embed = new MessageEmbed()
     .setColor(message.member.displayHexColor)
     .setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true, size: 2048 }))
-    .setFooter("Developed by JuresK", theark.avatarURL({ dynamic: true }));
+    .setFooter("Developed by JuresK", juresk.avatarURL({ dynamic: true }));
 
   args = args.splice(1);
   const cmd = client.commands.get(commandName) || client.commands.array().find((x) => x.conf.aliases && x.conf.aliases.includes(commandName));
